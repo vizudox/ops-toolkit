@@ -1,0 +1,15 @@
+# Define the pre-commit hooks that should be installed and run on every commit.
+default_install_hook_types:
+  - commit-msg
+
+# The hooks are run in the order they are defined.
+repos:
+  # Validate commit messages using conventional commits.
+  # For more information, see: https://www.conventionalcommits.org
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.13.7
+    hooks:
+      - id: commitizen
+        name: Commitizen
+        description: Validate commit messages against the Conventional Commits specification.
+        stages: [commit-msg]
