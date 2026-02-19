@@ -1,0 +1,16 @@
+# Title for the gitleaks configuration file.
+title = "Custom Gitleaks configuration"
+
+# Extend a configuration, the rules are overwritten or extended.
+# Default configuration as starting point: https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml
+[extend]
+
+# UseDefault will extend the default gitleaks config built in to the binary.
+# The latest version is located at: https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml
+useDefault = true
+
+# If there are any rules you don't want to inherit, they can be specified here.
+# disabledRules = [ "generic-api-key"]
+
+# Your custom rules go here.
+# [[rules]]

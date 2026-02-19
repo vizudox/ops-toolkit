@@ -1,9 +1,19 @@
 # Define the pre-commit hooks that should be installed and run on every commit.
 default_install_hook_types:
+  - pre-commit
   - commit-msg
 
 # The hooks are run in the order they are defined.
 repos:
+  # Detect hardcoded secrets in the repository using Gitleaks.
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+        name: Gitleaks
+        description: Scan for hardcoded secrets in the repository using Gitleaks.
+        stages: [pre-commit]
+
   # Validate commit messages using conventional commits.
   # For more information, see: https://www.conventionalcommits.org
   - repo: https://github.com/commitizen-tools/commitizen
