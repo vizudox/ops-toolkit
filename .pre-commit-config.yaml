@@ -14,6 +14,24 @@ repos:
         description: Scan for hardcoded secrets in the repository using Gitleaks.
         stages: [pre-commit]
 
+  # Format shell scripts using shfmt.
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.12.0-2
+    hooks:
+      - id: shfmt
+        name: Shell Format
+        description: Format shell scripts using shfmt.
+        stages: [pre-commit]
+
+  # Check for common issues in shell scripts using ShellCheck.
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck
+        name: Shell Check
+        description: Static analysis tool for shell scripts.
+        stages: [pre-commit]
+
   # Validate commit messages using conventional commits.
   # For more information, see: https://www.conventionalcommits.org
   - repo: https://github.com/commitizen-tools/commitizen
